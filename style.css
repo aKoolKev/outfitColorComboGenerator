@@ -1,0 +1,44 @@
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.color-display-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-color-display, .secondary-color-display {
+
+    font-size: 2em;
+
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    /* place all content in the middle of the x-axis */
+    justify-content: center; 
+
+    /* place item in the cross section of the x- & y-axis */
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+#generate-button{
+    text-align: center;
+    font-size: 1em;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rgb(198, 193, 193);
+}
+
+/* generate button hover effect */
+#generate-button:hover{
+    background-color: rgb(122, 122, 122)  ;
+}
