@@ -8,14 +8,13 @@ h1{
     align-items: center;
 }
 .main-color-display, .secondary-color-display {
-
     font-size: 2em;
 
     border: 2px solid black;
     border-radius: 20px;
     margin-bottom: 10px;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
 
     display: flex;
     /* place all content in the middle of the x-axis */
@@ -30,12 +29,18 @@ h1{
 /* Color name */
 .text-color{
     font-weight: bold;
+    /* Add shadow */
+    text-transform: uppercase;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 #generate-button{
     text-align: center;
-    font-size: 1em;
-    padding: 15px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    padding: 30px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
