@@ -165,6 +165,12 @@ function displayRandomColorCombo(){
     let secondaryColorDisplay = document.querySelector(".secondary-color-display");
     let secondaryBgColor = colorsMap.get( primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr[randSecondaryColorIndex] );
     secondaryColorDisplay.style.backgroundColor = secondaryBgColor;
+
+    //change the text color
+    let mainColorText = document.getElementById("main-color-text");
+    let secondaryColorText = document.getElementById("secondary-color-text");
+    mainColorText.style.color = secondaryBgColor;
+    secondaryColorText.style.color = mainBgColor;
 }   
 
 window.onload = function (){
