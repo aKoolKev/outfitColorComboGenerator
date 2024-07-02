@@ -156,13 +156,16 @@ function displayRandomColorCombo(){
     let randPrimaryColorIndex = getRandomIndex(primaryColorsArr.length);
     let randSecondaryColorIndex = getRandomIndex(primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr.length);
 
+    //change the main div container bg color
     let mainColorDisplay = document.querySelector(".main-color-display");
+    let mainBgColor = colorsMap.get( primaryColorsArr[randPrimaryColorIndex]._name );
+    mainColorDisplay.style.backgroundColor = mainBgColor;
+    
+    //change the secondary div container bg color
     let secondaryColorDisplay = document.querySelector(".secondary-color-display");
-    let bgColor = colorsMap.get(primaryColorsArr[randPrimaryColorIndex]._name);
-    alert(bgColor);
-    mainColorDisplay.style.backgroundColor(bgColor);
-
-}
+    let secondaryBgColor = colorsMap.get( primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr[randSecondaryColorIndex] );
+    secondaryColorDisplay.style.backgroundColor = secondaryBgColor;
+}   
 
 window.onload = function (){
     load_colorsMap();
