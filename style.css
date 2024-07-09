@@ -23,6 +23,7 @@ h1{
     border: 2px solid black;
     border-radius: 20px;
     margin-bottom: 10px;
+    margin-top: 0;
 
     /* width: 350px;
     height: 350px; */
@@ -63,6 +64,7 @@ h1{
     border-radius: 20px;
     cursor: pointer;
     background-color: rgb(198, 193, 193);
+    color: black;
 }
 
 /* generate button hover effect */
