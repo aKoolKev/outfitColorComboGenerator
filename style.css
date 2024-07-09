@@ -46,11 +46,11 @@ h1{
 /* Color name */
 .text-color{
     font-weight: bold;
-    /* Add shadow */
+    font-size: 1.2em;
     text-transform: uppercase;
     text-align: center;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 10px;
 }
 
