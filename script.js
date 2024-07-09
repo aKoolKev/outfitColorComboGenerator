@@ -1,8 +1,18 @@
-//contain all the colors name and hex-value
+/*
+AUTHOR: Kevin Dong
+DATE  : 7/2/24
+ABOUT : Program that generates a random primary color 
+        and a random secondary color that pairs well
+        with selected primary color. Inspiration comes
+        from hard time picking outfit combos.
+*/
+
+//contains name of color and its hex-value
 let colorsMap = new Map();
 
+//initialize the map of colors
 function load_colorsMap(){
-    //initialize map
+
     colorsMap.set("Pink", "#EDC6C0");
     colorsMap.set("Red", "#D43633");
     colorsMap.set("Orange", "#E1623B");
@@ -14,16 +24,17 @@ function load_colorsMap(){
     colorsMap.set("Purple", "#5C2E41");
     colorsMap.set("Brown", "#4D342D");
     colorsMap.set("Gray", "#ADADAD");
-
     colorsMap.set("Black", "#0A0A0A");
     colorsMap.set("White", "#FFFFFF") 
 }
 
 
 //PrimaryColor objects
+//contains name of the object and holds an array of secondary colors
 function PrimaryColor(primaryName) {
     this._name = primaryName;
-    //stores all of the colors that matches with the primary colors
+
+    //stores all of the colors that matches with the respective primary color
     this._secondaryColorsArr = [];
 }
 
@@ -31,19 +42,20 @@ function PrimaryColor(primaryName) {
 //array of Primary Color objects
 let primaryColorsArr = [];
 
-
+//initialize the primary color array
 function load_PrimaryColors(){
     for (let [color, _ ] of colorsMap){
-        if (color !== "Black" && color !== "White"){
+        if (color !== "Black" && color !== "White")
             primaryColorsArr.push( new PrimaryColor(color) );
-        }
     }
 }
 
+//initialize the secondary array in each primary color object
 function load_SecondaryColors(){
     for (let color of primaryColorsArr){
         let colorName = color._name;
-        if (colorName === "Pink" ){
+
+        if (colorName === "Pink"){
             color._secondaryColorsArr.push("Light Blue");
             color._secondaryColorsArr.push("Dark Blue");
             color._secondaryColorsArr.push("Gray");
@@ -137,18 +149,24 @@ function load_SecondaryColors(){
             color._secondaryColorsArr.push("White");
             color._secondaryColorsArr.push("Black");
         }
-        else {
+        else { //debug
             alert("ERROR ON SWITCH!");
         }
     }
 }
 
-//generate a random number given a bound
+//generate a random number given an upper bound (not inclusive)
 function getRandomIndex(upperBound_notInclusive){
     return ( Math.floor(Math.random() * upperBound_notInclusive) );
 }
 
-// Version 4.0
+/* 
+    [CREDIT]
+    Author: Pimp Trizkit
+    URL: https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+*/
+
+//lighten or darken of a color
 const pSBC=(p,c0,c1,l)=>{
     let r,g,b,P,f,t,h,i=parseInt,m=Math.round,a=typeof(c1)=="string";
     if(typeof(p)!="number"||p<-1||p>1||typeof(c0)!="string"||(c0[0]!='r'&&c0[0]!='#')||(c1&&!a))return null;
@@ -174,31 +192,31 @@ const pSBC=(p,c0,c1,l)=>{
     else return"#"+(4294967296+r*16777216+g*65536+b*256+(f?m(a*255):0)).toString(16).slice(1,f?undefined:-2)
 }
 
+//core function that generates a random color combination of main and secondary color 
 function displayRandomColorCombo(){
     //select a random primary and secondary color
     let randPrimaryColorIndex = getRandomIndex(primaryColorsArr.length);
     let randSecondaryColorIndex = getRandomIndex(primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr.length);
 
-    //change the main div container bg color
+    //change the main div container bg color to the selected random color
     let mainColorDisplay = document.querySelector(".main-color-display");
     let mainBgColor = colorsMap.get( primaryColorsArr[randPrimaryColorIndex]._name );
     mainColorDisplay.style.backgroundColor = mainBgColor;
     
-    //change the secondary div container bg color
+    //change the secondary div container bg color to the selected random color
     let secondaryColorDisplay = document.querySelector(".secondary-color-display");
     let secondaryBgColor = colorsMap.get( primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr[randSecondaryColorIndex] );
     secondaryColorDisplay.style.backgroundColor = secondaryBgColor;
 
-    //change the text color
+    //change the text color to the color name
     let mainColorText = document.getElementById("main-color-text");
     let secondaryColorText = document.getElementById("secondary-color-text");
+
     mainColorText.style.color = pSBC(-0.7, secondaryBgColor);
     secondaryColorText.style.color = pSBC(-0.7, mainBgColor);
 
-    //change text to the color name
     mainColorText.textContent = primaryColorsArr[randPrimaryColorIndex]._name;
     secondaryColorText.textContent = primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr[randSecondaryColorIndex];
-
 }  
 
 window.onload = function (){

@@ -1,12 +1,22 @@
 h1{
     text-align: center;
+}
+
+.credit{
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
     margin-bottom: 50px;
 }
+
+/* Holds the two color containers: main color and secondary color */
 .color-display-container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+/* The squares that display the colors */
 .main-color-display, .secondary-color-display {
     font-size: 2em;
 
