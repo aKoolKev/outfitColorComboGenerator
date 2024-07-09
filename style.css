@@ -30,8 +30,8 @@ h1{
 
     width: 80vw; /* Use viewport width for responsive width */
     max-width: 300px; /* Optional: limit the maximum width */
-    height: 80vw; /* Use viewport width for responsive height */
-    max-height: 275px; /* Optional: limit the maximum height */
+    height: 50vw; /* Use viewport width for responsive height */
+    max-height: 225px; /* Optional: limit the maximum height */
 
 
     display: flex;
