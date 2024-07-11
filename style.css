@@ -3,11 +3,9 @@ h1{
 }
 
 .credit{
-    margin-top: 100px;
     text-align: center;
     font-size: 1em;
     font-family: 'Courier New', Courier, monospace;
-    /* margin-bottom: 50px; */
 }
 
 /* Holds the two color containers: main color and secondary color */
@@ -71,4 +69,8 @@ h1{
 /* generate button hover effect */
 #generate-button:hover{
     background-color: rgb(122, 122, 122)  ;
+}
+
+footer{
+    padding: 100px;
 }
