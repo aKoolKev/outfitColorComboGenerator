@@ -219,6 +219,11 @@ function displayRandomColorCombo(){
     secondaryColorText.textContent = primaryColorsArr[randPrimaryColorIndex]._secondaryColorsArr[randSecondaryColorIndex];
 }  
 
+// alert user feature is coming soon
+function displayUnderConstructionMsg(){
+    alert("Coming Soon!");
+}
+
 window.onload = function (){
     load_colorsMap();
     load_PrimaryColors();
@@ -227,4 +232,12 @@ window.onload = function (){
     //generate button
     const generate_buttonEl = document.getElementById("generate-button");
     generate_buttonEl.addEventListener("click", displayRandomColorCombo);
+
+    //About me and feedback has not been set up; inform user when pressed
+    const aboutEl = document.getElementById("about");
+    aboutEl.addEventListener('click', displayUnderConstructionMsg);
+    
+    const feedbackEl = document.getElementById("feedback");
+    feedbackEl.addEventListener('click', displayUnderConstructionMsg);
+
 }
