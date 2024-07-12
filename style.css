@@ -72,5 +72,28 @@ h1{
 }
 
 footer{
-    padding: 100px;
+    padding: 50px;
+}
+
+.credit-line {
+    display: flex;
+    /* centers the content horizonally */
+    justify-content: center; 
+
+    /* centers the content vertically*/
+    align-items: center;
+
+    /* prevents text from wrapping to the next line */
+    white-space: nowrap;
+
+    /* makes the container take the full width of its parent */
+    width: 100%;
+    
+    /* ensures padding and border are included in the element's total width and height*/
+    box-sizing: border-box;
+
+    padding: 5px;
+    border-style: double;
+    border-radius: 3px;
+    background-color: #f3f3f3;
 }
