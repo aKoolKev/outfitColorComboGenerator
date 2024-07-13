@@ -62,21 +62,16 @@ h1{
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    background-color: rgb(212, 213, 211);
+    background-color: #f9f9f9;
     color: black;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.7);
 }
 
 /* generate button hover effect */
 #generate-button:hover{
     background-color: rgb(122, 122, 122)  ;
 }
-/* footer {
-    display: flex;
-    justify-content: center;
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-} */
+
 footer{
     display: flex;
     justify-content: center;
