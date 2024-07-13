@@ -39,6 +39,7 @@ textarea{
     border:none;
     background-color: rgb(227, 227, 227);
     font-size: 1em;
+    color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 5px;
     cursor: pointer;
