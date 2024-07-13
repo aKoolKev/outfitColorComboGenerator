@@ -237,7 +237,6 @@ window.onload = function (){
     const aboutEl = document.getElementById("about");
     aboutEl.addEventListener('click', displayUnderConstructionMsg);
     
-    const feedbackEl = document.getElementById("feedback");
-    feedbackEl.addEventListener('click', displayUnderConstructionMsg);
-
+    // const feedbackEl = document.getElementById("feedback");
+    // feedbackEl.addEventListener('click', displayUnderConstructionMsg);
 }

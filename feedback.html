@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Outfit Palette Picker Feedback Form</title>
+
+        <link rel="stylesheet" href="feedback.css">
+
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript" src="feedback.js"></script>
+
+    </head>
+    <body>
+        <h1>Outfit Palette Picker</h1>
+        <h2>Feedback Form</h2>
+        <div id="loadingOverlay">Loading...</div>
+        
+        <form id="feedbackForm" onsubmit="sendEmail(event)">
+            <textarea name="message" placeholder="Enter comments, questions, or concerns!" required></textarea>
+            <div class="buttons-container">
+                <input type="submit" class="buttons" id="form-submit-button">
+            </div>
+        </form>
+        
+    </body>
+</html>
