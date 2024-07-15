@@ -221,7 +221,7 @@ function displayRandomColorCombo(){
 
 // alert user feature is coming soon
 function displayUnderConstructionMsg(){
-    alert("Coming Soon!");
+    alert("🚧 Coming Soon! 🚧 Please stay tuned for future updates! Thank you!");
 }
 
 window.onload = function (){
